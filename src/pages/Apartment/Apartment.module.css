@@ -43,6 +43,25 @@
     margin: 0;
 }
 
+.rentalTitle__tag {
+    display: flex;
+    gap: 10px;
+    color: #fff;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.rentalTitle__tag li{
+    width: 115px;
+    height: 25px;
+    background: #FF6060;
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 14px;
+    list-style-type: none;
+}
+
 .info_host {
     display: flex;
     flex-direction: column;
@@ -59,4 +78,11 @@
     z-index: 5;
     position: absolute;
 
+}
+.description ul {
+    margin: 0;
+    padding: 0;
+}
+.description li {
+    list-style: none;
 }

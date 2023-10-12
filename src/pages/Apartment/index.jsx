@@ -3,7 +3,6 @@ import style from './Apartment.module.css'
 import Carousel from '../../components/Carousel'
 import Collapse from '../../components/Collapse'
 import ApartmentList from '../../data/logement'
-import ErrorElement from '../../components/ErrorElement'
 import ProfileHost from '../../components/ProfileHost'
 import Rating from '../../components/Rating'
 
@@ -13,12 +12,9 @@ export default function Apartment() {
     const getApartmentById = ApartmentList.filter(item => item.id === id)
     const itemApartment = getApartmentById.map(idApart => idApart)
 
-    if(!itemApartment === '') {
-        return <ErrorElement />
-    }
 
     return (
-        <div className={style.mainContainer} key={getApartmentById.id}>
+        <div className={style.mainContainer} key={itemApartment.id}>
             {itemApartment.map((item) =>
                 <>
                     <Carousel
@@ -31,8 +27,10 @@ export default function Apartment() {
                                 <h2>{item.title}</h2>
                                 <p>{item.location}</p>
                             </div>
-                            <ul className='rentalTitle__tag'>
-                                <li key={item.tags}>{item.tags}</li>
+                            <ul className={style.rentalTitle__tag}>
+                                {item.tags.map((tag, index) =>
+                                    <li key={index}>{tag}</li>
+                                )}
                             </ul>
                         </section>
                         <section className={style.info_host}>
@@ -56,7 +54,11 @@ export default function Apartment() {
                         <div className={style.description}>
                             <h2 className={style.descriptionTitle}>Equipement</h2>
                             <Collapse>
-                                <p>{item.equipments}</p>
+                                <ul>
+                                {item.equipments.map((equipment, index) =>
+                                    <li key={index}>{equipment}</li>
+                                )}
+                                </ul>
                             </Collapse>
                         </div>
                     </section>

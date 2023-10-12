@@ -15,7 +15,7 @@ export default function Collapse ({collapsible, children}) {
             </button>
             {!hidden ? 
             <div> </div> : 
-            <div className={style.collapseContent}  aria-expanded={hidden}>
+            <div className={style.collapseContent} aria-expanded={hidden}>
                 {children}
             </div>
             }
