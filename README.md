@@ -1,8 +1,6 @@
-# React + Vite
+# Bienvenue sur le site de Kasa 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Kasa est uune agence immobilière web spécialisée dans la location d'appartement entre particuliers.
 
-Currently, two official plugins are available:
+Le front-end de cette application a été développé avec la blibliothèque React, Vite.js et React Router.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
