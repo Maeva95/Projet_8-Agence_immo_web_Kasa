@@ -1,0 +1,14 @@
+.ratingContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    justify-content: flex-end;
+}
+.ratingContainer span{
+    height: 52px;
+}
+
+.ratingContainer img {
+    display: flex;
+    height: 24px;
+}
