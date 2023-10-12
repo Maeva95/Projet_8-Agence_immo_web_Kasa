@@ -1,4 +1,4 @@
-import ImageHero from "../../components/ImageHero"
+import HeroImage from "../../components/HeroImage"
 import imageHero from '../../assets/imageheroA.png'
 import styles from '../About/About.module.css'
 import value from '../../data/value'
@@ -10,9 +10,9 @@ export default function About() {
 
     return (
         <div className={styles.about}>
-            <ImageHero>
+            <HeroImage>
                 <img src={`${imageHero}`} alt="image bannière" />
-            </ImageHero>
+            </HeroImage>
             <section className={styles.description}>
                 {value.map(({id, title, detail}) =>
                 <div key={id} className={styles.descriptionContainer}>

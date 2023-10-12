@@ -1,0 +1,58 @@
+.collapse {
+    position: relative;
+
+    & button{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        padding: 5px 0;
+        height: 42px;
+        position: relative;
+        background-color: $color-font-primary;
+        border: none;
+        border-radius: 5px;
+        margin: 0;
+        text-align: start;
+        cursor: pointer;
+        width: 100%;
+
+        & .collapse-icon {
+            height: 15px;
+            position: absolute;
+            padding: 0 20px;
+            align-self:flex-end;
+            
+
+            &__close{
+                transform: rotate(0deg);
+                transition: transform 300ms linear;
+            }
+            &__open {
+                transform: rotate(180deg);
+                transition: transform 300ms linear;
+            }
+        }
+    }
+
+    & .collapse-content {
+        background-color: $color-bg-frame;
+        border-radius: 0 0 5px 5px;
+        padding: 20px;
+        margin: -5px 0 0 0;
+        box-sizing: border-box;
+        color:#FF6060;
+
+        &__collapsed{
+            display: none;
+        }
+        &__expended{
+            display: flex;
+            flex-direction: column;    
+        }
+    }
+
+    & p{
+        font-size: map-get($font-size, Title-frame);
+        font-weight: map-get($font-weight, Regular);
+    }
+}

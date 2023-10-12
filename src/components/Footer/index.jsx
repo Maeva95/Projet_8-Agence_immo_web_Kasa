@@ -1,5 +1,6 @@
 import logoFooter from '../../assets/LOGO.png'
-import '../Footer/Footer.module.css'
+import '../../../style.css'
+//import '../Footer/Footer.module.css'
 
 
 export default function Footer() {

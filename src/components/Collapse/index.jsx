@@ -1,6 +1,5 @@
-import style from '../Collapse/Collapse.module.css'
 import { useState } from 'react'
-import  '../Collapse/Collapse.module.css'
+import  '../../../style.css'
 import expand from '../../assets/Expand.svg'
 import { PropTypes } from 'prop-types'
 
@@ -11,11 +10,10 @@ export default function Collapse ({collapsible, children}) {
 	return (
         <div className='collapse'>
             <button onClick={() => visible (!hidden)}>
-                {!hidden ? <img src={expand} alt='icone fermé' id='close'/> : <img src={expand} alt='icone ouvert' id='open'/>}
+                <img src={expand} alt='icone collapse' className={hidden ? 'collapse-icon collapse-icon__close' : 'collapse-icon collapse-icon__open'}/> 
             </button>
-            {!hidden ? 
-            <div> </div> : 
-            <div className={style.collapseContent} aria-expanded={hidden}>
+            {!hidden && 
+            <div className={hidden ? 'collapse-content collapse-content__close' : 'collapse-content collapse-content__open'}> 
                 {children}
             </div>
             }

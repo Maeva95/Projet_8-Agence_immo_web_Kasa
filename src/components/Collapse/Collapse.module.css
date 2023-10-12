@@ -1,12 +1,12 @@
 .collapse {
-    width: 50%;
+    width: 100%;
     position: relative;
 }
 button {
     display: flex;
     flex-direction: column-reverse;
     justify-content: center;
-    height: 52px;
+    height: 32px;
     position: relative;
     background-color: #FF6060;
     border: none;
@@ -25,19 +25,18 @@ button img{
     height: 32px;
     color: #fff;
     position: absolute;
-    padding: 0 20px;
+    padding: 0 20px;    
     align-self:flex-end;
     z-index: 3;
 }
-img#close{
+.collapse-icon__close{
     transform: rotate(0deg);
 }
-img#open{
+.collapse-icon__open{
     transform: rotate(-180deg);
 }
 
-
-.collapseContent {
+.collapse-content__open{
     background-color: #F6F6F6;
     border-radius: 0 0 5px 5px;
     padding: 20px;
@@ -47,14 +46,11 @@ img#open{
     display: flex;
     flex-direction: column;
 }
-.collapseContent.collapsed{
+.collapse-content__close{
     display: none;
 }
-.collapse-content.expanded{
-    display: flex;
-}
+
 .collapse-content p {
     font-size: 18px;
     font-weight: 400;
-    
 }
