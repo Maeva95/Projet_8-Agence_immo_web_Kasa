@@ -1,0 +1,25 @@
+.rentalTitle__tag {
+    display: flex;
+    gap: 10px;
+    color: #fff;
+    padding: 0;
+
+    li{
+        background: #FF6060;
+        border-radius: 10px;
+        text-align: center;
+        padding: 5px 30px;
+        font-size: map-get($font-size, Tag );
+        list-style-type: none;
+        @include bp (tab) {
+            padding: 8px 21px;
+            font-size: map-get($font-size, Medium );
+        }
+        @include bp (mobile) {
+            padding: 3px 15px;
+            font-size: map-get($font-size, XSmall );
+            border-radius: 7px;
+        }
+    }
+
+}

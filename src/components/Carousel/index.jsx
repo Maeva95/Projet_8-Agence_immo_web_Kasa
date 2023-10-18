@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
-import style from './Carousel.module.css';
+//import style from './Carousel.module.css';
+import '../../../style.css'
 import { useState } from 'react';
 import chevronLeft from '../../assets/chevron_left.svg';
 import chevronRight from '../../assets/chevron_right.svg';
@@ -21,26 +22,26 @@ export default function Carousel ({id, pictures}) {
 
     
     return (
-        <section key={id} className={style.carouselImage}>
+        <section key={id} className='carouselImage'>
             {slidesLength > 1 &&
             <>
-                <img src={chevronLeft} alt="Image précédente" onClick={prevSlide} className={style.chevronLeft}/>
-                <img src={chevronRight} alt="Image suivante" onClick={nextSlide} className={style.chevronRight}/>
+                <img src={chevronLeft} alt="Image précédente" onClick={prevSlide} className='arrow arrow-left'/>
+                <img src={chevronRight} alt="Image suivante" onClick={nextSlide} className='arrow arrow-right'/>
             </>
             }
-            <div className={style.containerCarousel}>
+            <>
             {pictures.map((slide, index) => {
                 return (
-                    <div key={index} className={pictureCurrent === index ? style.sliderActive : style.slider}>
+                    <div key={index} className={pictureCurrent === index ? 'slideActive' : 'slide'}>
                         {index === pictureCurrent &&
                             <>
                                 <img src={slide} alt='appartement' />
-                                <span className={style.slideNumber}>{numberSlide}</span>
+                                <span className='slideNumber'>{numberSlide}</span>
                             </>
                         }
                     </div>
                 )})}
-            </div>
+            </>
         </section>
     );
 }

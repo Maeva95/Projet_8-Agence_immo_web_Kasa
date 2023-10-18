@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import './App.css'
+import '../style.css'
 import { Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import About from './pages/About'
@@ -7,27 +7,25 @@ import Footer from './components/Footer'
 import Header from './components/Header'
 import ErrorElement from './components/ErrorElement'
 import Apartment from './pages/Apartment'
-import { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
-import ApartmentList from './data/logement'
+import { Navigate } from 'react-router-dom'
+//import ApartmentList from './data/logement'
 
 export default function App() {
   document.title = 'Kasa - Agence immobilière web'
 
-  const navigate = useNavigate()
-  const homePage = <Route path='/'/> /// A REVERIFIER
-  const errorPage = !ApartmentList.id || !homePage
+  //const homePage = <Route path='/'/> /// A REVERIFIER
+  //const errorPage = !ApartmentList.id || !homePage
 
-  useEffect(() => {
-    if (errorPage) {
-      navigate('/404')
-    } 
-  }, [errorPage])
+  //useEffect(() => {
+  //  if (errorPage) {
+  //    navigate('/404')
+  //  } 
+  //}, [errorPage])
   
   return (
     <>
-      <div className='App'>
       <Header />
+      <main>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route 
@@ -37,11 +35,11 @@ export default function App() {
           />
           <Route path='/about' element={<About />}
           />
-          <Route path='/404' element={<ErrorElement />}
+          <Route path='*' element={<Navigate to='ErrorElement'/>}
           />
         </Routes>
+        </main>
       <Footer />
-      </div>
     </>
   )
 }

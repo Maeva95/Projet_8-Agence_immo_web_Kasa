@@ -4,7 +4,11 @@ footer {
     align-items: center;
     padding-top: 66px;
     background-color: $color-bg-footer;
-
+    @include bp (mobile) {
+        font-size: 12px;
+        padding: 60px 0;
+        text-align: center;
+    }
     & img{
         width: 122px;
         height: 40px;
@@ -12,5 +16,8 @@ footer {
     & p{
         color: $color-font-secondary;
         padding-bottom: 29px;
+        @include bp (mobile) {
+            padding: 10px 122px;
+        }
     }
 }

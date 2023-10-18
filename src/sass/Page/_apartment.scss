@@ -1,0 +1,102 @@
+
+.section_info {
+    color: #FF6060;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    @include bp (mobile) {
+        flex-direction: column;
+        gap: 16px;
+    }
+    .rentalTitle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 20px;
+        &__detail{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            h2{
+                color: #FF6060;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                margin: 0;
+                font-weight: map-get($font-weight, Medium);
+                font-size: map-get($font-size, Title-apartment);
+                @include bp (tab) {
+                    font-size: map-get($font-size, Subtitle);
+                }
+                @include bp (mobile) {
+                    font-size: map-get($font-size, Title-frame);
+                }
+            }
+            p{
+                font-size: map-get($font-size, Title-frame);
+                margin: 0;
+                @include bp (tab) {
+                    font-size: map-get($font-size, Tag);
+                }
+                @include bp (mobile) {
+                    font-size: map-get($font-size, Tag);
+                }
+            }
+        }
+    }
+    .info_host {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 27px;
+        width: 20%;
+        margin: 0;
+        @include bp (mobile) {
+            flex-direction: row-reverse;
+            width: 100%;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+    }
+    
+}
+
+.sectionCollapse {
+    display: flex;
+    gap: 76px;
+    @include bp (tab) {     
+        gap: 40px;
+    }
+    @include bp (mobile) {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .description-container{
+        width: 100%;
+        @include bp (tab) {
+            margin: 0;
+            flex-direction: column;
+            gap: 20px;
+        }
+        @include bp (mobile) {
+            flex-direction: column;
+            gap: 20px;
+        }
+        h2 {
+            color: #fff;
+            font-size: map-get($font-size, Subtitle );
+            font-weight: map-get($font-weight, Medium);
+            border-radius: 5px;
+            padding: 10px;
+            z-index: 5;
+            @include bp (tab) {
+                font-size: map-get($font-size, Title-frame);
+            }
+            @include bp (mobile) {
+                font-size: map-get($font-size, Small);
+            }
+        }
+    }
+}
+

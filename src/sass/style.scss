@@ -1,4 +1,5 @@
 @import "./Utils/variables";
+@import "./Utils/mixin";
 
 @import "./Base/base";
 @import "./Base/typo";
@@ -6,7 +7,17 @@
 @import "./Components/card";
 @import "./Components/hero-image";
 @import "./Components/collapse";
+@import "./Components/carousel";
+@import "./Components/rating";
+@import "./Components/profile-host";
+@import "./Components/tags";
 
 
+@import "./Layout/App";
 @import "./Layout/header";
 @import "./Layout/footer";
+
+@import "./Page/home";
+@import "./Page/apartment";
+@import "./Page/about"
+

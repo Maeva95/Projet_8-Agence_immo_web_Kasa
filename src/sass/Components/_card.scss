@@ -5,6 +5,10 @@
     justify-content: flex-end;
     align-items: flex-start;
     height: 340px;
+    @include bp (mobile) {
+        height: 225px;
+    }
+    
 
     & img{
         object-fit: cover;
@@ -14,8 +18,10 @@
         height: 100%;
         border-radius: 10px;
         flex-shrink: 1;
-        filter: contrast(60%);
+        /*filter: contrast(60%);*/
     }
+    
+    
     & h2{
         position: absolute;
         z-index: 1;

@@ -1,0 +1,67 @@
+.carouselImage {
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 415px;
+    border-radius: 25px;
+    margin-bottom: 24px;
+    margin-top: 8px;
+    @include bp (mobile) {
+        height: 255px;
+    }
+
+    .arrow {
+        position: absolute;
+        z-index: 1;
+        height: 110px;
+        cursor: pointer;
+        @include bp (tab) {
+            height: 50px;
+            margin: 10px;
+        }
+        @include bp (mobile) {
+            height: 24px;
+        }
+        &.arrow-left {
+            left: -8px;
+        }
+        &.arrow-right {
+            right: -8px;
+        }
+        
+    }
+    .slideActive{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        @include bp (mobile) {
+            height: 255px;
+        }
+        & img{
+            object-fit: cover;
+            width: 100%;
+            height: 415px;
+            border-radius: 25px;
+            @include bp (mobile) {
+                border-radius: 10px;
+                height: 255px;
+            }
+        }
+
+        .slideNumber {
+            color: #fff;
+            position: absolute;
+            bottom: 10px;
+            @include bp (mobile) {
+                font-size: map-get($font-size, Small);
+            }
+
+        }
+    }
+}

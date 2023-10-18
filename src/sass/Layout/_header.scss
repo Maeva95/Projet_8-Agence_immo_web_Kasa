@@ -1,5 +1,8 @@
 header {
     margin: 45px 100px 0;
+    @include bp (mobile){
+        margin: 20px 20px 0;
+    }
     & .nav{
         display: flex;
         flex-direction: row;
@@ -8,6 +11,10 @@ header {
         &__logo{
             height: 68px;
             width: 211px;
+            @include bp(mobile) {
+                height: 46px;
+                width: 145px;
+            }
         }
         &__liste{
             display: flex;
@@ -17,6 +24,9 @@ header {
             list-style-type: none;
             box-sizing: border-box;
             margin: 0;
+            @include bp(mobile) {
+                padding: 0;
+            }
             
             & li{
                 list-style: none;
@@ -26,13 +36,23 @@ header {
                 border-top: 2px solid transparent;
                 display: flex;
                 gap: 57px;
+                @include bp(mobile) {
+                    gap: 26px;
+                }
                 & a{
                     text-decoration: none;
                     color: $color-font-primary;
                     font-size: map-get($font-size, Subtitle );
+                    @include bp(mobile) {
+                        font-size: map-get($font-size, Medium );
+                    }
+                    @include bp(mobile) {
+                        font-size: map-get($font-size, Small );
+                    }
                     &:hover, :active{
                         text-decoration: underline;
                     }
+                    
                 }
             }
         }

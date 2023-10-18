@@ -1,13 +1,15 @@
 .collapse {
     position: relative;
+    width: 100%;
+    overflow: hidden;
 
-    & button{
+    button{
         display: flex;
         flex-direction: column-reverse;
         justify-content: center;
-        padding: 5px 0;
-        height: 42px;
+        height: 52px;
         position: relative;
+        z-index: 1;
         background-color: $color-font-primary;
         border: none;
         border-radius: 5px;
@@ -15,44 +17,96 @@
         text-align: start;
         cursor: pointer;
         width: 100%;
+        @include bp (tab) {
+            padding: 0;
+            height: 40px;
+        }
+        @include bp (mobile) {
+            height: 30px;
+        }
 
-        & .collapse-icon {
-            height: 15px;
+        .collapse-icon {
+            height: 20px;
             position: absolute;
             padding: 0 20px;
             align-self:flex-end;
-            
-
+            @include bp (tab) {
+                height: 13px;
+            }
+            @include bp (mobile) {
+                height: 10px;
+            }
+    
             &__close{
-                transform: rotate(0deg);
-                transition: transform 300ms linear;
+                transform: rotate(180deg);
+                transition: transform 470ms linear;
             }
             &__open {
-                transform: rotate(180deg);
-                transition: transform 300ms linear;
+                transform: rotate(0deg);
+                transition: transform 470ms linear;
             }
         }
     }
 
     & .collapse-content {
-        background-color: $color-bg-frame;
-        border-radius: 0 0 5px 5px;
-        padding: 20px;
-        margin: -5px 0 0 0;
+        transition: height 470ms;
         box-sizing: border-box;
-        color:#FF6060;
-
-        &__collapsed{
-            display: none;
+        color:$color-font-primary;
+        p{
+            background-color: $color-bg-frame;
+            border-radius: 0 0 5px 5px;
+            padding: 20px;
+            font-size: map-get($font-size, Title-frame);
+            font-weight: map-get($font-weight, Regular);
+            @include bp (tab) {
+                font-size: map-get($font-size, Tag);
+            }
+            @include bp (mobile) {
+                font-size: map-get($font-size, Small);
+            }
         }
-        &__expended{
-            display: flex;
-            flex-direction: column;    
+        ul {
+            background-color: $color-bg-frame;
+            border-radius: 0 0 5px 5px;
+            margin: 0;
+            padding: 20px;
+            @include bp (tab) {
+                font-size: map-get($font-size, Tag);
+            }
+            @include bp (mobile) {
+                font-size: map-get($font-size, Small);
+            }
+            li {
+                list-style: none;
+            }
         }
     }
+}
 
-    & p{
-        font-size: map-get($font-size, Title-frame);
-        font-weight: map-get($font-weight, Regular);
+@keyframes inAnimation {
+    0% {
+        opacity: 0;
+        height: 0px;
+    }
+    50% {
+        opacity: 0.1;
+    }
+    100% {
+        opacity: 1;
+        height: 110px;
+    }
+}
+
+@keyframes outAnimation {
+    0% {
+        opacity: 1;
+        max-height: 150px;
+    }
+    40% {
+        opacity: 0.9;
+    }
+    100% {
+        opacity: 0;
+        max-height: 0px;
     }
 }

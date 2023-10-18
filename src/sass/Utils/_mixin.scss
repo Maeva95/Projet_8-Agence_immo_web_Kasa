@@ -1,0 +1,13 @@
+@mixin bp($breakpoint) {
+    $value: map-get($breakpoints, $breakpoint);
+    @if $value != null {
+        @media (max-width: $value){
+            @content;
+        }
+    }
+    @else {
+        @warn "Malheureusement, aucune valeur n’a pu être récupérée sur `#{$breakpoint}`. "
+        + "Les points d’arrêt disponibles sont: #{map-keys($breakpoints)}.";
+    }
+}
+
