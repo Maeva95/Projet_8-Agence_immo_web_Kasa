@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
-//import style from './Carousel.module.css';
-import '../../../style.css'
+import style from './Carousel.module.scss';
+//import '../../../style.css'
 import { useState } from 'react';
 import chevronLeft from '../../assets/chevron_left.svg';
 import chevronRight from '../../assets/chevron_right.svg';
@@ -22,7 +22,7 @@ export default function Carousel ({id, pictures}) {
 
     
     return (
-        <section key={id} className='carouselImage'>
+        <section key={id} className={style.carouselImage}>
             {slidesLength > 1 &&
             <>
                 <img src={chevronLeft} alt="Image précédente" onClick={prevSlide} className='arrow arrow-left'/>
@@ -32,11 +32,11 @@ export default function Carousel ({id, pictures}) {
             <>
             {pictures.map((slide, index) => {
                 return (
-                    <div key={index} className={pictureCurrent === index ? 'slideActive' : 'slide'}>
+                    <div key={index} className={pictureCurrent === index ? style.slideActive : style.slide}>
                         {index === pictureCurrent &&
                             <>
                                 <img src={slide} alt='appartement' />
-                                <span className='slideNumber'>{numberSlide}</span>
+                                <span className={style.slideNumber}>{numberSlide}</span>
                             </>
                         }
                     </div>

@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom'
-import '../../../style.css'
+import style from '../Apartment/Apartment.module.scss'
+//import '../../../style.css'
 import Carousel from '../../components/Carousel'
 import Collapse from '../../components/Collapse'
 import ApartmentList from '../../data/logement'
@@ -19,19 +20,19 @@ export default function Apartment() {
                     id={item.id}
                     pictures={item.pictures}
                     />
-                    <div className='section_info'>
-                        <section className='rentalTitle'>
-                            <div className='rentalTitle__detail'>
+                    <div className= {style.sectionInfo}>
+                        <section className={style.sectionInfoRental}>
+                            <div className={style.rentalTitle__detail}>
                                 <h2>{item.title}</h2>
                                 <p>{item.location}</p>
                             </div>
-                            <ul className='rentalTitle__tag'>
+                            <ul className={style.rentalTitle__tag}>
                                 {item.tags.map((tag, index) =>
                                     <li key={index}>{tag}</li>
                                 )}
                             </ul>
                         </section>
-                        <section className='info_host'>
+                        <section className={style.sectionInfoHost}>
                             <ProfileHost 
                                 key={`${item.host.name}-${item.host.index}`}
                                 name={item.host.name}
@@ -42,14 +43,14 @@ export default function Apartment() {
                             />
                         </section>
                     </div>
-                    <section className= 'sectionCollapse'>
-                        <div className='description-container'>
+                    <section className= {style.sectionCollapse}>
+                        <div className={style.descriptionContainer}>
                             <h2 >Description</h2>
                             <Collapse>
                                 <p>{item.description}</p>
                             </Collapse>
                         </div>
-                        <div className='description-container'>
+                        <div className={style.descriptionContainer}>
                             <h2 >Équipements</h2>
                             <Collapse>
                                 <ul>

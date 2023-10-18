@@ -1,5 +1,5 @@
 
-.section_info {
+.sectionInfo {
     color: #FF6060;
     display: flex;
     justify-content: space-between;
@@ -45,7 +45,7 @@
             }
         }
     }
-    .info_host {
+    .sectionInfoHost {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -72,7 +72,7 @@
         flex-direction: column;
         gap: 20px;
     }
-    .description-container{
+    .descriptionContainer{
         width: 100%;
         @include bp (tab) {
             margin: 0;

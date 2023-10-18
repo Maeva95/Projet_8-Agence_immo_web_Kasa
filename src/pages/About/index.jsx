@@ -1,7 +1,7 @@
 import HeroImage from "../../components/HeroImage"
 import imageHero from '../../assets/imageheroA.png'
-//import styles from '../About/About.module.css'
-import '../../../style.css'
+import styles from '../About/About.module.scss'
+//import '../../../style.css'
 import value from '../../data/value'
 import Collapse from "../../components/Collapse"
 
@@ -14,9 +14,9 @@ export default function About() {
             <HeroImage>
                 <img src={`${imageHero}`} alt="image bannière" />
             </HeroImage>
-            <section className='description'>
+            <section className= {styles.description}>
                 {value.map(({id, title, detail}) =>
-                <div key={id} className='description-container'>
+                <div key={id} className= {styles.descriptionContainer}>
                     <h2>{title}</h2>
                     <Collapse>
                     <p>{detail}</p>

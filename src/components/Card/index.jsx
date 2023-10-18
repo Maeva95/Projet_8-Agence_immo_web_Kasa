@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom'
-//import style from './Card.module.css'
-import '../../../style.css'
+import style from './Card.module.scss'
+//import '../../../style.css'
 import { PropTypes } from 'prop-types'
 
 export default function Card ({ id, title, cover }) {
 
 	return (
         <>
-            <Link to={id} className='card'>
+            <Link to={id} className={style.card}>
                 <img src={cover} alt={`${title} cover`} />
                 <h2>{title}</h2>
             </Link>

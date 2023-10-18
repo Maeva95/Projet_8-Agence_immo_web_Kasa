@@ -3,12 +3,12 @@ header {
     @include bp (mobile){
         margin: 20px 20px 0;
     }
-    & .nav{
+    nav{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
     
-        &__logo{
+        __logo{
             height: 68px;
             width: 211px;
             @include bp(mobile) {
@@ -16,7 +16,7 @@ header {
                 width: 145px;
             }
         }
-        &__liste{
+        __liste{
             display: flex;
             flex-direction: row; 
             justify-content: center;
@@ -28,7 +28,7 @@ header {
                 padding: 0;
             }
             
-            & li{
+            li{
                 list-style: none;
                 box-sizing: content-box;
                 flex: 50%;
@@ -39,7 +39,7 @@ header {
                 @include bp(mobile) {
                     gap: 26px;
                 }
-                & a{
+                a{
                     text-decoration: none;
                     color: $color-font-primary;
                     font-size: map-get($font-size, Subtitle );
