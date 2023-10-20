@@ -1,1 +1,26 @@
-@use '../../sass/Components/rating'
+//@use '../../sass/style.scss';
+@use '../../sass/Utils/library' as *;
+
+.ratingContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    justify-content: flex-end;
+    @include bp (mobile) {
+        justify-content: flex-start;
+
+    }
+    span{
+        height: 52px;
+    }
+    img {
+        display: flex;
+        height: 24px;
+        @include bp (tab) {
+            height: 18px;
+        }
+        @include bp (mobile) {
+            height: 14px;
+        }
+    }
+}

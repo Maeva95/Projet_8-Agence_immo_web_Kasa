@@ -5,10 +5,10 @@ export default function ErrorPage() {
     const error = useRouteError()
     console.log(error)
     return (
-        <main className={style.error}>
+        <div className={style.error}>
             <h1>404</h1>
-            <p>Oups! La page que vous demandez n&#39;existe pas.</p>
-            <Link to='/'>Retourner à la hpage d&#39;Accueil</Link>
-        </main>
+            <p>{`Oups! La page que vous demandez n'existe pas.`}</p>
+            <Link to='/'>{`Retourner à la hpage d'Accueil`}</Link>
+        </div>
     )
 }

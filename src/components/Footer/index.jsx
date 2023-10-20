@@ -1,5 +1,5 @@
 import logoFooter from '../../assets/LOGO.png'
-import '../../../style.css'
+//import '../../../style.css'
 import '../Footer/Footer.module.scss'
 
 

@@ -16,7 +16,7 @@ export default function About() {
             </HeroImage>
             <section className= {styles.description}>
                 {value.map(({id, title, detail}) =>
-                <div key={id} className= {styles.descriptionContainer}>
+                <div key={id} className= {styles.dropdown}>
                     <h2>{title}</h2>
                     <Collapse>
                     <p>{detail}</p>

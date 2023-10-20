@@ -1,1 +1,117 @@
-@use '../../sass/Components/collapse'
+//@use '../../sass/style.scss';
+@use '../../sass/Utils/library' as *;
+
+.collapse {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    button{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        height: 52px;
+        position: relative;
+        z-index: 1;
+        background-color: $color-font-primary;
+        border: none;
+        border-radius: 5px;
+        margin: 0;
+        text-align: start;
+        cursor: pointer;
+        width: 100%;
+        @include bp (tab) {
+            padding: 0;
+            height: 40px;
+        }
+        @include bp (mobile) {
+            height: 30px;
+        }
+
+        img {
+            height: 20px;
+            position: absolute;
+            padding: 0 20px;
+            align-self:flex-end;
+            @include bp (tab) {
+                height: 13px;
+            }
+            @include bp (mobile) {
+                height: 10px;
+            }
+        }
+
+        .collapseIcon {
+            &__close{
+                transform: rotate(180deg);
+                transition: transform 470ms linear;
+            }
+            &__open {
+                transform: rotate(0deg);
+                transition: transform 470ms linear;
+            }
+        }
+    }
+
+    & .collapseContent {
+        height: auto;
+        box-sizing: border-box;
+        color:$color-font-primary;
+        p{
+            background-color: $color-bg-frame;
+            border-radius: 0 0 5px 5px;
+            padding: 20px;
+            font-size: map-get($font-size, Title-frame);
+            font-weight: map-get($font-weight, Regular);
+            @include bp (tab) {
+                font-size: map-get($font-size, Tag);
+            }
+            @include bp (mobile) {
+                font-size: map-get($font-size, Small);
+            }
+        }
+        ul {
+            background-color: $color-bg-frame;
+            border-radius: 0 0 5px 5px;
+            margin: 0;
+            padding: 20px;
+            @include bp (tab) {
+                font-size: map-get($font-size, Tag);
+            }
+            @include bp (mobile) {
+                font-size: map-get($font-size, Small);
+            }
+            li {
+                list-style: none;
+            }
+        }
+    }
+}
+
+@keyframes inAnimation {
+    0% {
+        opacity: 0;
+        height: 0px;
+    }
+    50% {
+        opacity: 0.1;
+    }
+    100% {
+        opacity: 1;
+        height: auto;
+    }
+}
+
+@keyframes outAnimation {
+    0% {
+        opacity: 1;
+        height: auto;
+    }
+    50% {
+        opacity: 0.9;
+    }
+    100% {
+        opacity: 0;
+        height: 0px;
+    }
+}

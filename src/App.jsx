@@ -7,7 +7,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import ErrorPage from './pages/ErrorPage'
 import Apartment from './pages/Apartment'
-import { Navigate } from 'react-router-dom'
+//import { Navigate } from 'react-router-dom'
 
 export default function App() {
   document.title = 'Kasa - Agence immobilière web'
@@ -18,18 +18,26 @@ export default function App() {
       <Header />
       <main>
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route 
+            path='/' 
+            element={<Home />}
+            errorElement={<ErrorPage />}
+          />
           <Route 
             path='/:id'
             element={<Apartment />}
             errorElement={<ErrorPage />}
           />
-          <Route path='/about' element={<About />}
+          <Route 
+            path='/about' 
+            element={<About />}
           />
-          <Route path='*' element={<Navigate to='ErrorPage'/>}
+          <Route 
+            path='/*' 
+            element={<ErrorPage />}
           />
         </Routes>
-        </main>
+      </main>
       <Footer />
     </>
   )

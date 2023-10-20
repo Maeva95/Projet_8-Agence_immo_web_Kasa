@@ -1,6 +1,5 @@
 import HeroImage from "../../components/HeroImage";
 import styles from '../Home/Home.module.scss'
-//import '../../../style.css'
 import imageHero from '../../assets/imagehero.png'
 import ApartmentList from '../../data/logement'
 import Card from "../../components/Card";
