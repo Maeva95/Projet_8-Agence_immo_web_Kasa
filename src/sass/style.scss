@@ -1,7 +1,19 @@
-@import "./Utils/variables";
-@import "./Utils/mixin";
+@import "./Utils/library";
 
 @import "./Base/base";
 @import "./Base/typo";
 
-
+#root {
+    max-width: 1440px;
+    margin: 0;
+    background-color: $color-bg;
+    box-sizing: border-box;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include bp (mobile) {
+        max-width: 767px;
+    }
+    
+}

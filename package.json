@@ -23,7 +23,7 @@
   "preview": "vite preview",
 
 
-  "sass": "sass --watch"
+  "sass": "sass --watch ./src/sass/style.scss:./style.css"
   
   },
   

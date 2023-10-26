@@ -1,22 +1,3 @@
-//@use './sass/style.scss';
 @use './sass/Utils/library' as *;
 
 
-#root {
-    max-width: 1440px;
-    margin: 0;
-    background-color: $color-bg;
-    box-sizing: border-box;
-    @include bp (mobile) {
-        max-width: 767px;
-    }
-    & main {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        margin: 50px 100px;
-        @include bp (mobile) {
-            margin: 19px 20px;
-        }
-    }
-}

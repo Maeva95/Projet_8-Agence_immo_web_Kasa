@@ -11,7 +11,10 @@ export default function Carousel ({id, pictures}) {
 
     const [pictureCurrent, setPictureCurrent] = useState(0);
     const slidesLength = pictures.length;
-    const numberSlide = `${pictureCurrent + 1} / ${slidesLength}`
+
+    //numérotation des slides
+    const numberSlide = `${pictureCurrent + 1} / ${slidesLength}` 
+
 
     function nextSlide() {
         setPictureCurrent(pictureCurrent === slidesLength - 1 ? 0 : pictureCurrent + 1);
@@ -36,8 +39,10 @@ export default function Carousel ({id, pictures}) {
                     <div key={index} className={pictureCurrent === index ? style.slideActive : style.slide}>
                         {index === pictureCurrent &&
                             <>
-                                <img src={slide} alt='appartement' />
-                                <span className={style.slideNumber}>{numberSlide}</span>
+                                <img src={slide} alt={`photo de l'appartement`} />
+                                {slidesLength > 1 &&
+                                    <span className={style.slideNumber}>{numberSlide}</span>
+                                }
                             </>
                         }
                     </div>

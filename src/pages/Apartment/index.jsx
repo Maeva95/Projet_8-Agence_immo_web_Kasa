@@ -6,22 +6,19 @@ import Collapse from '../../components/Collapse'
 import ApartmentList from '../../data/logement'
 import ProfileHost from '../../components/ProfileHost'
 import Rating from '../../components/Rating'
-import ErrorPage from '../ErrorPage'
 
 export default function Apartment() {
     let {id} = useParams()
     const getApartmentById = ApartmentList.filter(item => item.id === id)
     const itemApartment = getApartmentById.map(idApart => idApart)
 
-    if (getApartmentById === undefined || !getApartmentById) {
-        return (
-            <ErrorPage/>
-        )
-    } 
+    const descriptionTitle = 'Description'
+    const equipmentTitle = 'Équipement'
+
         return (
             <>
                 {itemApartment.map((item) =>
-                    <div key= {item.id}>
+                    <main key= {item.id} className={style.mainContainer}>
                         <Carousel
                         id={item.id}
                         pictures={item.pictures}
@@ -50,24 +47,26 @@ export default function Apartment() {
                             </article>
                         </section>
                         <section className= {style.sectionCollapse}>
-                            <div className={style.dropdown}>
-                                <h2 >Description</h2>
-                                <Collapse>
-                                    <p>{item.description}</p>
+                                <Collapse
+                                    key={`description appartment ${id}`}
+                                    title={descriptionTitle}
+                                    detail={<p>{item.description}</p>}
+                                >
                                 </Collapse>
-                            </div>
-                            <div className={style.dropdown}>
-                                <h2 >Équipements</h2>
-                                <Collapse>
-                                    <ul>
-                                    {item.equipments.map((equipment, index) =>
-                                        <li key={index}>{equipment}</li>
-                                    )}
-                                    </ul>
+                                <Collapse
+                                    key={`equipments appartment ${id}`}
+                                    title={equipmentTitle}
+                                    detail={
+                                        <ul>
+                                        {item.equipments.map((equipment, index) =>
+                                            <li key={index}>{equipment}</li>
+                                        )}
+                                        </ul>
+                                    }
+                                >
                                 </Collapse>
-                            </div>
                         </section>
-                    </div>
+                    </main>
                 )}
             </>
         )

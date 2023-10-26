@@ -4,11 +4,11 @@
 .ratingContainer {
     display: flex;
     flex-direction: row;
-    gap: 8px;
+    gap: 15px;
     justify-content: flex-end;
     @include bp (mobile) {
         justify-content: flex-start;
-
+        gap: 7px;
     }
     span{
         height: 52px;

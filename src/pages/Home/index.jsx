@@ -6,7 +6,7 @@ import Card from "../../components/Card";
 
 export default function Home() {
     return (
-        <>
+        <main className={styles.mainContainer}>
             <HeroImage>
                 <img src={`${imageHero}`} alt="image bannière" />
                 <h1>Chez vous, partout et ailleurs</h1>
@@ -22,6 +22,6 @@ export default function Home() {
                     </li>
                 )}
             </ul>
-        </>
+        </main>
     )
 }

@@ -1,6 +1,17 @@
 //@use '../../sass/style.scss';
 @use '../../sass/Utils/library' as *;
 
+.mainContainer {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 50px 100px;
+    @include bp (mobile) {
+        padding: 27px 20px;
+        gap: 13px;
+    }    
+}
 
 .sectionInfo {
     color: #FF6060;
@@ -10,12 +21,16 @@
     @include bp (mobile) {
         flex-direction: column;
         gap: 16px;
+        margin-bottom: 0px;
     }
     .infoRental {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         gap: 20px;
+        @include bp (mobile) {
+            gap: 10px;
+        }
         .rentalTitle {
             display: flex;
             flex-direction: column;
@@ -54,6 +69,7 @@
             }
             &__tag {
                 display: flex;
+                flex-wrap: wrap;
                 gap: 10px;
                 color: #fff;
                 padding: 0;
@@ -69,9 +85,10 @@
                         font-size: map-get($font-size, Medium );
                     }
                     @include bp (mobile) {
-                        padding: 3px 15px;
+                        padding: 2px 15px;
                         font-size: map-get($font-size, XSmall );
                         border-radius: 7px;
+                        line-height: 142.6%;
                     }
                 }
                 
@@ -83,14 +100,14 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        gap: 27px;
+        gap: 21px;
         width: 20%;
         margin: 0;
         @include bp (mobile) {
             flex-direction: row-reverse;
             width: 100%;
             align-items: center;
-            margin-bottom: 10px;
+            margin-bottom: 0px;
         }
     }
     
@@ -98,6 +115,7 @@
 
 .sectionCollapse {
     display: flex;
+    justify-content: space-between;
     gap: 76px;
     @include bp (tab) {     
         gap: 40px;
@@ -105,33 +123,6 @@
     @include bp (mobile) {
         flex-direction: column;
         gap: 20px;
-    }
-    .dropdown{
-        width: 100%;
-        @include bp (tab) {
-            margin: 0;
-            flex-direction: column;
-            gap: 20px;
-        }
-        @include bp (mobile) {
-            flex-direction: column;
-            gap: 20px;
-        }
-        h2 {
-            color: #fff;
-            font-size: map-get($font-size, Subtitle );
-            font-weight: map-get($font-weight, Medium);
-            border-radius: 5px;
-            padding: 10px;
-            z-index: 5;
-            position: absolute;
-            @include bp (tab) {
-                font-size: map-get($font-size, Title-frame);
-            }
-            @include bp (mobile) {
-                font-size: map-get($font-size, Small);
-            }
-        }
     }
 }
 

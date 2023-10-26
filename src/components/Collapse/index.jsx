@@ -1,32 +1,35 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import style from '../Collapse/Collapse.module.scss'
 import expand from '../../assets/Expand.svg'
 import { PropTypes } from 'prop-types'
 
 
-export default function Collapse ({ children }) {
+export default function Collapse (props) {
     const [hidden, visible] = useState(false)
-    const mounted = { animation: 'inAnimation 470ms linear' }
-    const unmounted = { height: '0', animation: 'outAnimation 470ms linear reverse'}
+    const [contentHeight, setContentHeight] = useState('0px')
+    const containerHeight = useRef()
+
+    useEffect(() => {
+        setContentHeight(`${containerHeight.current.scrollHeight}px`)
+    }, [])
+
+    const handleDropdownClick = () =>
+        visible(!hidden)
 
     return (
-        <div className={style.collapse}>
-            <button onClick={() => visible (!hidden)}>
-                <img src={expand} alt='icone show hide' className={hidden ? style.collapseIcon__open : style.collapseIcon__close}/> 
+        <div className={hidden ? style.collapseClose : style.collapseClose}>
+            <button onClick={handleDropdownClick}>
+                <h2>{props.title}</h2>
+                <img src={expand} alt='icone show hide' className={hidden ? style.collapseIcon__close : style.collapseIcon__open} />
             </button>
-            <div className={style.collapseContent} style={hidden ? mounted : unmounted}>{children}</div>
+            <div className={style.collapseContent} ref={containerHeight} style={{height: hidden ? `${contentHeight}` : '0px'}}>{props.detail}</div>
         </div>
     )
 }
 
-
-
-
-
-
 Collapse.propTypes = {
-    children: PropTypes.node,
-    isMounted: PropTypes.node
+    props: PropTypes.node,
+    title: PropTypes.node,
+    detail: PropTypes.node
 }
-
 

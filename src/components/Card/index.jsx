@@ -7,7 +7,7 @@ export default function Card ({ id, title, cover }) {
 
 	return (
         <>
-            <Link to={id} className={style.card}>
+            <Link to={'/appartement/' + id} className={style.card}>
                 <img src={cover} alt={`${title} cover`} />
                 <h2>{title}</h2>
             </Link>

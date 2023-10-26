@@ -10,20 +10,20 @@ import Collapse from "../../components/Collapse"
 export default function About() {
 
     return (
-        <>
+        <main className={styles.mainContainer}>
             <HeroImage>
                 <img src={`${imageHero}`} alt="image bannière" />
             </HeroImage>
             <section className= {styles.description}>
                 {value.map(({id, title, detail}) =>
-                <div key={id} className= {styles.dropdown}>
-                    <h2>{title}</h2>
-                    <Collapse>
-                    <p>{detail}</p>
+                    <Collapse 
+                        key={id} 
+                        title={title} 
+                        detail={<p>{detail}</p>} 
+                    >
                     </Collapse>
-                </div>
                 )}
             </section>
-        </>
+        </main>
     )
 }
