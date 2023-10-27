@@ -1,17 +1,8 @@
 @use '../../sass/Utils/library' as *;
 
-.collapseOpen {
-    width: 45%;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    @include bp (mobile) {
-        width: 100%;
-    }
-}
 
 .collapseClose {
-    width: 45%;
+    width: 100%;
     overflow: hidden;
     display: flex;
     flex-direction: column;

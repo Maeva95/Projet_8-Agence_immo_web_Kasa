@@ -16,7 +16,6 @@ body {
 }
 
 #root {
-  max-width: 1440px;
   margin: 0;
   background-color: #FFF;
   box-sizing: border-box;

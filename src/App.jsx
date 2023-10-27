@@ -19,7 +19,7 @@ export default function App() {
       <Header />
         <Routes>
           <Route 
-            path='/' 
+            path='/home' 
             element={<Home />}
             errorElement={<ErrorPage />}
           />
