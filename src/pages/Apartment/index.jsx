@@ -1,12 +1,12 @@
 import { useParams, useNavigate } from 'react-router-dom'
+import FetchData from '../../data/fetchData'
 import style from '../Apartment/Apartment.module.scss'
 import Carousel from '../../components/Carousel'
 import Collapse from '../../components/Collapse'
-//import Loader from '../../components/Loader'
+import Loader from '../../components/Loader'
 import ProfileHost from '../../components/ProfileHost'
 import Rating from '../../components/Rating'
-//import { useState, useEffect } from 'react'
-import AppartList from '../../data/logement'
+//import AppartList from '../../data/logement'
 
 
 
@@ -14,10 +14,20 @@ export default function Apartment() {
     
     const descriptionTitle = 'Description'
     const equipmentTitle = 'Équipement'
+    const url = '/src/data/logement.json'
     const {id} = useParams()
     const navigate = useNavigate()
-    const getApartmentById = AppartList.find((item) => item.id === id)
+    const apartment = FetchData(url)
     
+    
+    if (apartment.isLoading) {
+        return <Loader />
+    }
+    if (apartment.error) {
+        return <div>Erreur de chargement...</div>
+    }
+    const getApartmentById = apartment.dataLog.find((item) => item.id === id)
+
     if(getApartmentById === undefined){
         navigate('/ErrorPage')
     }

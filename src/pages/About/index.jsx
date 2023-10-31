@@ -1,7 +1,6 @@
 import HeroImage from "../../components/HeroImage"
 import imageHero from '../../assets/imageheroA.png'
 import styles from '../About/About.module.scss'
-//import '../../../style.css'
 import value from '../../data/value'
 import Collapse from "../../components/Collapse"
 
