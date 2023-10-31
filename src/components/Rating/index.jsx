@@ -1,7 +1,6 @@
 import StarSolid from '../../assets/star-solid.svg'
 import StarUnchecked from '../../assets/star-solid_unchecked.svg'
 import style from '../Rating/Rating.module.scss'
-//import '../../../style.css'
 import PropTypes from 'prop-types'
 
 export default function Rating ({ratingValue}) {

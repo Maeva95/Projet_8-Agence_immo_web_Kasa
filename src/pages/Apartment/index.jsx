@@ -6,9 +6,6 @@ import Collapse from '../../components/Collapse'
 import Loader from '../../components/Loader'
 import ProfileHost from '../../components/ProfileHost'
 import Rating from '../../components/Rating'
-//import AppartList from '../../data/logement'
-
-
 
 export default function Apartment() {
     
@@ -17,16 +14,16 @@ export default function Apartment() {
     const url = '/src/data/logement.json'
     const {id} = useParams()
     const navigate = useNavigate()
-    const apartment = FetchData(url)
+    const apartment = FetchData(url) //Récupération des data du fichier Json des appartements
     
     
-    if (apartment.isLoading) {
+    if (apartment.isLoading) { //
         return <Loader />
     }
     if (apartment.error) {
         return <div>Erreur de chargement...</div>
     }
-    const getApartmentById = apartment.dataLog.find((item) => item.id === id)
+    const getApartmentById = apartment.dataLog.find((item) => item.id === id) //association l'id de la page de l'appartement à l'id récupéré dans les données du fichier json 
 
     if(getApartmentById === undefined){
         navigate('/ErrorPage')

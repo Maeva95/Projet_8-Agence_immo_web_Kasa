@@ -6,6 +6,7 @@ export default function FetchData (url) {
 	const [error, setError] = useState(false)
 
     useEffect(() => {
+        setLoading(true)
         async function fetchDataLogement() {
             try {
                 const response = await fetch(url)

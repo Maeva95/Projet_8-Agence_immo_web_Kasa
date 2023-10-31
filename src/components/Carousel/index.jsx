@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-//import '../../../style.css'
 
 import style from './Carousel.module.scss';
 import { useState } from 'react';

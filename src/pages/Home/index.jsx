@@ -1,10 +1,22 @@
-import HeroImage from "../../components/HeroImage";
 import styles from '../Home/Home.module.scss'
 import imageHero from '../../assets/imagehero.png'
-import ApartmentList from '../../data/logement'
-import Card from "../../components/Card";
+import Card from '../../components/Card';
+import HeroImage from '../../components/HeroImage';
+import Loader from '../../components/Loader'
+import FetchData from '../../data/fetchData'
 
 export default function Home() {
+
+    const url = '/src/data/logement.json'
+    const apartment = FetchData(url)
+    
+    if (apartment.isLoading) {
+        return <Loader />
+    }
+    if (apartment.error) {
+        return <div>Erreur de chargement...</div>
+    }
+
     return (
         <main className={styles.mainContainer}>
             <HeroImage>
@@ -12,7 +24,7 @@ export default function Home() {
                 <h1>Chez vous, partout et ailleurs</h1>
             </HeroImage>
             <ul className={styles.gallery}>
-                {ApartmentList.map(({id, title, cover}) =>
+                {apartment.dataLog.map(({id, title, cover}) =>
                     <li key={id}>
                         <Card
                             id={id}
