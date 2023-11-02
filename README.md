@@ -4,3 +4,10 @@ Kasa est uune agence immobilière web spécialisée dans la location d'apparteme
 
 Le front-end de cette application a été développé avec la blibliothèque React, Vite.js et React Router.
 
+Pour démarrer le projet, voici les étapes:
+
+- Cloner le repository
+- Dans le terminal, npm run dev
+
+
+
