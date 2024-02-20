@@ -10,6 +10,6 @@ export default defineConfig({
         targets: ['defaults', 'not IE 11'],
       })
     ],
-  base: 'Kasa_Agence_Immobiliere_Web'
+  base: 'home'
     
 })
